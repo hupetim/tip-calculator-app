@@ -1,0 +1,304 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: hsl(185, 41%, 84%);
+  font-family: "Space Mono", sans-serif;
+  font-size: 24px;
+}
+
+h1 {
+  color: hsl(186, 14%, 43%);
+  font-weight: 700;
+  letter-spacing: 0.5rem;
+  line-height: 1.5rem;
+  text-align: center;
+  margin: 200px auto 80px auto;
+}
+
+@media screen and (max-width: 900px) {
+  html {
+    font-size: 22px;
+  }
+
+  h1 {
+    margin: 40px auto;
+  }
+}
+
+/********************************
+          MAIN APP
+**********************************/
+
+.App {
+  background-color: hsl(0, 0%, 100%);
+  height: 450px;
+  width: 900px;
+  margin: 0 auto;
+  /* padding: 20px; */
+  border-radius: 20px;
+  box-shadow: 0 30px 50px hsl(185, 41%, 70%);
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+@media screen and (max-width: 900px) {
+  .App {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-device-width: 600px) {
+  .App {
+    flex-direction: column;
+    height: auto;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    padding: 25px;
+  }
+}
+
+/********************************
+      FORM - INPUT + OUTPUT
+**********************************/
+
+.form {
+  height: 85%;
+  width: 44.5%;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input-form {
+  justify-content: space-between;
+  /* background-color: hsl(189, 41%, 87%); */
+  padding: 10px;
+}
+
+.output-form {
+  justify-content: flex-start;
+  background-color: hsl(183, 100%, 15%);
+  /* box-shadow: 0 15px 25px hsl(185, 41%,  75%); */
+  padding: 40px;
+}
+
+.tips {
+  width: 100%;
+}
+
+.tips p {
+  width: 100%;
+  font-size: 0.66rem;
+  font-weight: 700;
+  color: hsl(184, 14%, 56%);
+  margin-bottom: 10px;
+}
+
+.tip-grid {
+  width: 100%;
+  display: grid;
+  grid-template: 45px 45px / repeat(3, 1fr);
+  grid-gap: 10px;
+}
+
+@media only screen and (max-device-width: 600px) {
+  .form {
+    width: 100%;
+  }
+
+  .output-form {
+    padding: 25px;
+    height: 220px;
+    justify-content: space-between;
+  }
+
+  .tips {
+    margin-bottom: 30px;
+  }
+
+  .tip-grid {
+    grid-template: 45px 45px 45px / repeat(2, 1fr);
+  }
+}
+
+/********************************
+    INPUT FIELDS - BIG + SMALL
+**********************************/
+
+input {
+  width: 100%;
+  height: 45px;
+  border: none;
+  border-radius: 7px;
+  background-color: hsl(189, 41%, 97%);
+  color: hsl(186, 14%, 43%);
+  font-size: 1rem;
+  font-family: "Space Mono", sans-serif;
+  font-weight: 700;
+  text-align: right;
+  -moz-appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input:focus {
+  outline: none;
+  border: 2px solid hsl(172, 67%, 45%);
+}
+
+input::placeholder {
+  color: hsl(185, 41%, 84%);
+}
+
+.input-big {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.input-big input {
+  width: 100%;
+  padding-right: 15px;
+}
+
+.input-big label {
+  position: relative;
+}
+
+.input-big label::before {
+  content: "";
+  position: absolute;
+  left: 15px;
+  top: 0;
+  bottom: 0;
+  width: 12px;
+  color: hsl(185, 41%, 84%);
+}
+
+#input-big-1 label::before {
+  background: url("./images/icon-dollar.svg") center / contain no-repeat;
+}
+
+#input-big-2 label::before {
+  background: url("./images/icon-person.svg") center / contain no-repeat;
+}
+
+.input-big p {
+  font-size: 0.66rem;
+  font-weight: 700;
+  color: hsl(184, 14%, 56%);
+  margin-bottom: 10px;
+}
+
+.input-small input {
+  width: 100%;
+  text-align: center;
+}
+
+@media only screen and (max-device-width: 600px) {
+}
+
+/********************************
+              BUTTON
+**********************************/
+
+button {
+  font-family: "Space Mono", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: center;
+  border: none;
+  border-radius: 7px;
+  height: 45px;
+}
+
+button.btn-tip {
+  width: 100%;
+  color: hsl(189, 41%, 97%);
+  background-color: hsl(183, 100%, 15%);
+}
+
+button.btn-reset {
+  width: 100%;
+  font-size: 0.83rem;
+  color: hsl(183, 100%, 15%);
+  background-color: hsl(172, 67%, 45%);
+  margin-top: auto;
+}
+
+button.active {
+  color: hsl(183, 100%, 15%);
+  background-color: hsl(172, 67%, 45%);
+}
+
+/* media query for mouse/touch pad */
+@media (hover: hover) and (pointer: fine) {
+  button:hover {
+    background-color: hsl(185, 41%, 84%);
+    color: hsl(183, 100%, 15%);
+    cursor: pointer;
+  }
+
+  button:active {
+    transform: translateY(3px);
+  }
+}
+
+/* media query for smartphones/touchscreens */
+@media (hover: none) and (pointer: coarse) {
+  button:active {
+    background-color: hsl(185, 41%, 84%);
+    color: hsl(183, 100%, 15%);
+    transform: translateY(3px);
+  }
+}
+
+@media only screen and (max-device-width: 600px) {
+  button.btn-reset {
+    margin-top: 0;
+  }
+}
+
+/********************************
+          OUTPUT FIELDS
+**********************************/
+
+.output-field {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+}
+
+.output-field:first-child {
+  margin-bottom: 50px;
+}
+
+.output-field p {
+  font-size: 1.66rem;
+  color: hsl(172, 67%, 45%);
+}
+
+.output-desc p:first-child {
+  color: hsl(0, 0%, 100%);
+  font-size: 0.58rem;
+  margin-bottom: 7px;
+}
+
+.output-desc p:last-child {
+  color: hsl(184, 14%, 56%);
+  font-size: 0.5rem;
+}
+
+@media only screen and (max-device-width: 600px) {
+  .output-field:first-child {
+    margin-bottom: 0;
+  }
+}
